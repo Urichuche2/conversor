@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de Letras Minecraft</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #fcee09;
+    }
+    textarea, input {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 20px;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+    button {
+      background-color: #fcee09;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #fff200;
+    }
+    .output {
+      font-size: 24px;
+      margin-top: 20px;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>Conversor de Letras Minecraft</h1>
+  <textarea id="inputText" rows="3" placeholder="Escribe tu texto aquí..."></textarea>
+  <button onclick="convertText()">Convertir</button>
+  <div class="output" id="outputText"></div>
+<div>
+    <a>Por Urichuche</a>
+</div>
+  <script>
+    const smallCapsMap = {
+      'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ',
+      'f': 'ꜰ', 'g': 'ɢ', 'h': 'ʜ', 'i': 'ɪ', 'j': 'ᴊ',
+      'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ',
+      'p': 'ᴘ', 'q': 'ǫ', 'r': 'ʀ', 's': 's', 't': 'ᴛ',
+      'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ'
+    };
+
+    function convertText() {
+      const input = document.getElementById('inputText').value.toLowerCase();
+      let result = '';
+      for (const char of input) {
+        result += smallCapsMap[char] || char;
+      }
+      document.getElementById('outputText').textContent = result;
+    }
+  </script>
+</body>
+</html>
